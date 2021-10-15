@@ -1,12 +1,10 @@
 import { Get, JsonController } from "routing-controllers";
+import StatusUseCase from "../../../domain/health/usecases/status.usecase";
 
 @JsonController('/health')
 export default class HealthController {
     @Get('')
-    async healthCheck(){
-        return {
-            status : 'UP',
-            timestamp: new Date().toISOString()
-        }
+    healthCheck(){
+        return new StatusUseCase().execute();
     }
 }
