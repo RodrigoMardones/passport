@@ -3,6 +3,7 @@ declare global {
       export interface ProcessEnv {
         NODE_ENV: 'development' | 'qa' | 'production';
         PORT: number;
+        PASSPORT_APP : string;
       }
     }
   }

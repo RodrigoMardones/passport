@@ -15,9 +15,13 @@
   "license": "ISC",
   "dependencies": {
     "@koa/cors": "^3.1.0",
+    "@types/pino": "^6.3.11",
     "class-transformer": "^0.4.0",
     "class-validator": "^0.13.1",
     "koa": "^2.13.3",
+    "koa-pino-logger": "^3.0.0",
+    "pino": "^7.0.2",
+    "pino-pretty": "^7.1.0",
     "reflect-metadata": "^0.1.13",
     "routing-controllers": "^0.9.0"
   },
@@ -25,6 +29,7 @@
     "@tsconfig/node14": "^1.0.1",
     "@types/koa": "^2.13.4",
     "@types/koa__cors": "^3.0.3",
+    "@types/koa-pino-logger": "^3.0.0",
     "@types/node": "^16.11.0",
     "dotenv": "^10.0.0",
     "nodemon": "^2.0.13",
