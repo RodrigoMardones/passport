@@ -4,6 +4,9 @@ declare global {
         NODE_ENV: 'development' | 'qa' | 'production';
         PORT: number;
         PASSPORT_APP : string;
+        SALT_CRYPT_CODE: number;
+        DATABASE_URI: string;
+        DATABASE_NAME: string;
       }
     }
   }
