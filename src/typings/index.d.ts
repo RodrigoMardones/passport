@@ -7,6 +7,7 @@ declare global {
         SALT_CRYPT_CODE: number;
         DATABASE_URI: string;
         DATABASE_NAME: string;
+        SECRET_KEY_JWT: string;
       }
     }
   }

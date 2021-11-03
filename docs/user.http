@@ -1,0 +1,10 @@
+POST http://127.0.0.1:4000/user
+Content-Type: application/json
+
+{
+    "name": "try0",
+    "lastName": "wasp",
+    "email": "try0wasp@test.com",
+    "dni" : "189755341",
+    "password": "asdfasdf"
+}

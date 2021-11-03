@@ -3,10 +3,11 @@ export interface User {
     lastName: string;
     password: string;
     email: string;
+    dni: string;
 }
 
 export interface Auth {
-    expires_in: string;
+    expiresIn: string;
     token: string;
     timestamp: string;
 }
