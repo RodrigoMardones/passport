@@ -2,9 +2,19 @@ POST {{baseURL}}/user
 Content-Type: application/json
 
 {
-    "name": "try0",
-    "lastName": "wasp",
-    "email": "try0wasp@test.com",
-    "dni" : "189755341",
-    "password": "asdfasdf"
+    "name": "rodrigo",
+    "lastName": "mardones",
+    "email": "prueba12@prueba12.com",
+    "dni" : "222222222",
+    "password": "asdfasdf.12"
+}
+
+###
+
+POST  {{baseURL}}/user/auth
+Content-Type: application/json
+
+{
+    "email": "prueba12@prueba12.com",
+    "password": "asdfasdf.12"
 }
