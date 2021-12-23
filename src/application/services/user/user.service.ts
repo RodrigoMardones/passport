@@ -6,7 +6,10 @@ import jwt from "jsonwebtoken";
 export default class UserService implements IUserRepository {
   constructor(private readonly dataProvider: DataProvider) {}
   async create(data: User): Promise<User> {
-    const hashedPassword = await Bcrypt.hash(data.password, 10);
+    const hashedPassword = await Bcrypt.hash(
+      data.password,
+      Number(process.env.SALT_CRYPT_CODE)
+    );
     const fixedUser: User = {
       ...data,
       password: hashedPassword,
