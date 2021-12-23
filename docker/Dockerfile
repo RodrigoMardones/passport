@@ -1,4 +1,4 @@
-FROM node:16.3.0-alpine
+FROM node:latest
 
 WORKDIR /app
 
@@ -12,4 +12,4 @@ RUN npm install
 # copia de distribution
 COPY . .
 #compilado
-CMD ["npm","run" ,"start"]
+CMD ["npm","run","start:dev"]

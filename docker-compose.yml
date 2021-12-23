@@ -6,7 +6,7 @@ services:
     image: passport-app:latest
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: docker/Dockerfile
     env_file:
       - .env
     environment:
@@ -17,4 +17,4 @@ services:
       DATABASE_NAME: ${DATABASE_NAME}
       SECRET_KEY_JWT: ${SECRET_KEY_JWT}
     ports:
-      - "4000:4000"
+      - "${PORT}:${PORT}"
