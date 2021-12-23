@@ -1,0 +1,3 @@
+
+### EXAMPLE OF HEALTH
+GET {{baseURL}}/health
