@@ -4,8 +4,14 @@ import IUserRepository from "./user.repository";
 
 export default class CreateUserUseCase  implements UseCase<unknown, User>{
     constructor(private readonly repository: IUserRepository) {}
-    async execute(data?: unknown): Promise<User> {
+    async execute(data?: unknown): Promise<unknown> {
         const d = data as User;
-        return await this.repository.create(d);
+        const exist = await this.repository.find(d);
+        if(!exist) {
+            await this.repository.create(d);
+            return this.repository.find(d);
+        } else {
+            return;
+        }
     }
 }

@@ -6,7 +6,7 @@
   "scripts": {
     "ts-conf": "ts-node --show-config",
     "build": "tsc",
-    "start": "npm run build && nodemon dist/index",
+    "start": "npm run build && node -r dotenv/config dist/index",
     "start:dev": "nodemon -r dotenv/config src/index.ts",
     "try0wasp": "nodemon -r dotenv/config --exec ts-node src/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"

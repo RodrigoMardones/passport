@@ -9,8 +9,7 @@ export default class LoggerMiddleware implements KoaMiddlewareInterface{
         @Ctx() ctx: Context, 
         next: (err?: any) => Promise<any>
         ): Promise<any> {
-        
-        
+         
         const middleware = logger({
             logger : traceLogger,
         });

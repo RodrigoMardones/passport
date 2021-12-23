@@ -1,6 +1,6 @@
 import mongodb, {Collection, Db, MongoClient } from 'mongodb';
 import DataProvider from '../../../services/interfaces/dataProvider';
-
+import traceLogger from '../../logger/logger';
 export default class MongoDB implements DataProvider{
     
     public client: MongoClient;
@@ -16,9 +16,11 @@ export default class MongoDB implements DataProvider{
             try {
                 this.client = await this.client.connect();
                 this.db = await this.client.db(name);
+                traceLogger.info('connected to database');
                 break;
             } catch (e) {
                 tries = tries - 1;
+                traceLogger.error('error trying to connect to database');
                 if(tries === 0) throw e;
             }
         }

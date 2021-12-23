@@ -1,6 +1,6 @@
 import { createKoaServer, RoutingControllersOptions } from 'routing-controllers';
 import Koa from 'koa';
-
+import traceLogger from '../application/interfaces/logger/logger';
 export default class Server {
     private readonly app: Koa;
     constructor(config: RoutingControllersOptions){
@@ -9,10 +9,10 @@ export default class Server {
     public async init(): Promise<void> {
         const port: number = parseInt(String(process.env.PORT), 10) || 8082;   
         this.app.listen(port, () => {
-            console.log(`server running on port => [${port}] 😀`);
+            traceLogger.info(`server running on port => [${port}] 😀`);
         });
         this.app.on('error', (e) => {
-            console.log(e.message);
+            traceLogger.info(e.message);
         })
     }
 }
